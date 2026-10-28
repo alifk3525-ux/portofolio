@@ -100,7 +100,7 @@
     text-decoration: none; transition: border-color 0.2s, color 0.2s; display: inline-block;
   }
   .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-  .hero-socials { display: flex; gap: 1.25rem; }
+  .hero-socials { display: flex; gap: 1.25rem; flex-wrap: wrap; }
   .hero-socials a {
     color: rgba(255,255,255,0.5); font-size: 0.85rem; text-decoration: none;
     display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s;
@@ -223,12 +223,17 @@
     background: var(--white); border-radius: 8px; overflow: hidden;
     border: 1px solid var(--gray-200);
     transition: transform 0.2s, box-shadow 0.2s;
+    display: flex; flex-direction: column;
   }
   .project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(15,31,61,0.1); }
   .project-thumb {
     height: 160px; display: flex; align-items: center; justify-content: center;
     font-size: 2.5rem; position: relative; overflow: hidden;
   }
+  /* Style gambar di thumbnail jika mau pakai gambar asli */
+  .project-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: opacity 0.3s; }
+  .project-card:hover .project-thumb img { opacity: 1; }
+  
   .project-thumb.navy { background: var(--navy); }
   .project-thumb.gold { background: linear-gradient(135deg, #1a2f52, #0f1f3d); }
   .project-thumb.orange { background: linear-gradient(135deg, #c0392b, #e8631a); }
@@ -238,9 +243,9 @@
     font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 3px;
     letter-spacing: 0.06em;
   }
-  .project-body { padding: 1.25rem; }
+  .project-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
   .project-title { font-weight: 700; font-size: 1rem; color: var(--navy); margin-bottom: 0.4rem; }
-  .project-desc { font-size: 0.85rem; color: var(--gray-500); line-height: 1.65; margin-bottom: 1rem; }
+  .project-desc { font-size: 0.85rem; color: var(--gray-500); line-height: 1.65; margin-bottom: 1rem; flex: 1; }
   .project-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1rem; }
   .project-tag {
     background: var(--gold-pale); color: #7a5e1a;
@@ -249,10 +254,10 @@
   .project-link {
     font-size: 0.82rem; color: var(--navy); font-weight: 600; text-decoration: none;
     display: inline-flex; align-items: center; gap: 0.3rem;
-    border-bottom: 1.5px solid var(--gold); padding-bottom: 1px;
+    border-bottom: 1.5px solid var(--gold); padding-bottom: 1px; align-self: flex-start;
   }
   .coming-soon {
-    font-size: 0.78rem; color: var(--gray-500); font-style: italic;
+    font-size: 0.78rem; color: var(--gray-500); font-style: italic; align-self: flex-start;
   }
 
   /* KONTAK */
@@ -330,12 +335,13 @@
       serta membangun solusi digital untuk manajemen pelayanan kesehatan.
     </p>
     <div class="hero-btns">
-      <a href="#proyek" class="btn-primary">Lihat Proyek Saya</a>
-      <a href="#kontak" class="btn-outline">Hubungi via WhatsApp</a>
+      <a href="URL_FILE_PDF_CV_KAMU_DISINI" class="btn-primary" target="_blank">📄 Unduh CV (PDF)</a>
+      <a href="#proyek" class="btn-outline">Lihat Proyek Saya</a>
     </div>
     <div class="hero-socials">
       <a href="mailto:alifk3525@gmail.com">✉ alifk3525@gmail.com</a>
       <a href="https://www.linkedin.com/in/alif-kurnia-3649741b4" target="_blank">🔗 LinkedIn</a>
+      <a href="https://github.com/alifk3525-ux" target="_blank">💻 GitHub</a>
       <a href="tel:0895359741487">📞 0895-3597-41487</a>
     </div>
   </div>
@@ -424,6 +430,18 @@
             </ul>
           </div>
         </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Lulus 2023</div> 
+          <div class="timeline-card">
+            <div class="timeline-org">Sekolah Menengah Kejuruan (SMK)</div>
+            <div class="timeline-role">Teknik Komputer dan Jaringan (TKJ)</div>
+            <ul class="timeline-points">
+              <li>Mempelajari dasar jaringan komputer, troubleshooting hardware, dan administrasi server.</li>
+              <li>Membangun fondasi logika pemrograman dan teknologi informasi yang solid sebelum mendalami bidang Rekam Medis.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
     <div>
@@ -502,8 +520,8 @@
         <span class="skill-tag">PHP</span>
         <span class="skill-tag">MySQL</span>
         <span class="skill-tag">HTML/CSS</span>
-        <span class="skill-tag">Flutter</span>
-        <span class="skill-tag">Web Design</span>
+        <span class="skill-tag">Tailwind CSS</span>
+        <span class="skill-tag">Chart.js</span>
         <span class="skill-tag">REST API</span>
       </div>
     </div>
@@ -568,6 +586,25 @@
   <h2 class="section-title">Proyek &amp; Inovasi</h2>
   <p class="section-lead">Sistem informasi kesehatan dan aplikasi yang dikembangkan secara mandiri maupun dalam konteks akademik.</p>
   <div class="project-grid">
+    
+    <div class="project-card">
+      <div class="project-thumb" style="background: linear-gradient(135deg, #0f1f3d, #c9a84c);">
+        <span style="font-size:2.5rem; position: relative; z-index: 2;">📈</span>
+        <div class="thumb-label" style="z-index: 2;">Visualisasi Data</div>
+      </div>
+      <div class="project-body">
+        <div class="project-title">SIM Penyebab Kematian</div>
+        <p class="project-desc">Aplikasi web untuk mengidentifikasi dan memantau tren penyebab kematian, dilengkapi dengan visualisasi grafik interaktif menggunakan Chart.js.</p>
+        <div class="project-tags">
+          <span class="project-tag">PHP</span>
+          <span class="project-tag">MySQL</span>
+          <span class="project-tag">Tailwind CSS</span>
+          <span class="project-tag">Chart.js</span>
+        </div>
+        <a href="#" class="project-link" style="border-color:var(--orange); color:var(--orange);">Detail Proyek →</a>
+      </div>
+    </div>
+
     <div class="project-card">
       <div class="project-thumb navy">
         <span style="font-size:2.5rem;">🏨</span>
@@ -581,10 +618,10 @@
           <span class="project-tag">MySQL</span>
           <span class="project-tag">SIMRS</span>
         </div>
-        
         <a href="https://mini-hospital.infinityfreeapp.com" class="project-link" target="_blank" style="border-color:var(--orange); color:var(--orange);">Live Demo →</a>
       </div>
     </div>
+    
     <div class="project-card">
       <div class="project-thumb gold">
         <span style="font-size:2.5rem;">❤️</span>
@@ -598,42 +635,44 @@
           <span class="project-tag">MySQL</span>
           <span class="project-tag">PHR</span>
         </div>
-        
-  <a href="https://worksafe-smartplus.infinityfreeapp.com" class="project-link" target="_blank" style="border-color:var(--orange); color:var(--orange);">Live Demo →</a>
+        <a href="https://worksafe-smartplus.infinityfreeapp.com" class="project-link" target="_blank" style="border-color:var(--orange); color:var(--orange);">Live Demo →</a>
       </div>
-    </div>
-    <div class="project-card">
-  <div class="project-thumb" style="background: linear-gradient(135deg, #1a2f52, #6b21a8);">
-    <span style="font-size:2.5rem;">📝</span>
-    <div class="thumb-label">Akademik</div>
-  </div>
-  <div class="project-body">
-    <div class="project-title">Sistem Penilaian Sempro</div>
-    <p class="project-desc">Aplikasi penilaian seminar proposal berbasis web — penguji input nilai dan catatan secara langsung, mahasiswa memantau hasil penilaian secara realtime.</p>
-    <div class="project-tags">
-      <span class="project-tag">PHP</span>
-      <span class="project-tag">MySQL</span>
-      <span class="project-tag">Realtime</span>
-      <span class="project-tag">Akademik</span>
     </div>
     
-  <a href="https://sisempro.infinityfreeapp.com" class="project-link" target="_blank" style="border-color:var(--orange); color:var(--orange);">Live Demo →</a>
-  </div>
-</div>
     <div class="project-card">
-      <div class="project-thumb" style="background: linear-gradient(135deg, #1a2f52, #2d5016);">
-        <span style="font-size:2.5rem;">📋</span>
-        <div class="thumb-label">Inovasi PKL</div>
+      <div class="project-thumb" style="background: linear-gradient(135deg, #1a2f52, #6b21a8);">
+        <span style="font-size:2.5rem;">📝</span>
+        <div class="thumb-label">Akademik</div>
       </div>
       <div class="project-body">
-        <div class="project-title">Sistem Simulasi Antrean Terpadu</div>
-        <p class="project-desc">Purwarupa sistem pendaftaran mandiri berbasis web dengan pencetakan stiker termal dan simulasi SEP BPJS untuk mempercepat alur administrasi loket.</p>
+        <div class="project-title">Sistem Penilaian Sempro</div>
+        <p class="project-desc">Aplikasi penilaian seminar proposal berbasis web — penguji input nilai dan catatan secara langsung, mahasiswa memantau hasil penilaian secara realtime.</p>
         <div class="project-tags">
-          <span class="project-tag">Web</span>
-          <span class="project-tag">Thermal Print</span>
-          <span class="project-tag">BPJS</span>
+          <span class="project-tag">PHP</span>
+          <span class="project-tag">MySQL</span>
+          <span class="project-tag">Realtime</span>
+          <span class="project-tag">Akademik</span>
         </div>
-        <span class="coming-soon">⏳ Purwarupa / Inovasi PKL</span>
+        <a href="https://sisempro.infinityfreeapp.com" class="project-link" target="_blank" style="border-color:var(--orange); color:var(--orange);">Live Demo →</a>
+      </div>
+    </div>
+    
+    <!-- DITAMBAHKAN: Proyek KuisKu sebagai pengganti Simulasi Antrean -->
+    <div class="project-card">
+      <div class="project-thumb" style="background: linear-gradient(135deg, #1a2f52, #059669);">
+        <span style="font-size:2.5rem; position: relative; z-index: 2;">⏱️</span>
+        <div class="thumb-label" style="z-index: 2;">CBT & Evaluasi</div>
+      </div>
+      <div class="project-body">
+        <div class="project-title">KuisKu</div>
+        <p class="project-desc">Aplikasi kuis dan ujian berbasis web yang dikembangkan menggunakan PHP dan MySQL. Dilengkapi bank soal, impor soal, timer, penilaian otomatis, leaderboard, dan rekap hasil peserta untuk menghadirkan evaluasi yang lebih interaktif.</p>
+        <div class="project-tags">
+          <span class="project-tag">PHP</span>
+          <span class="project-tag">MySQL</span>
+          <span class="project-tag">CBT</span>
+          <span class="project-tag">Timer & Leaderboard</span>
+        </div>
+        <a href="https://kuisku.infinityfreeapp.com/" class="project-link" target="_blank" style="border-color:var(--orange); color:var(--orange);">Live Demo →</a>
       </div>
     </div>
   </div>
@@ -674,6 +713,13 @@
         <div class="kontak-meta">
           <div class="kontak-type">LinkedIn</div>
           <div class="kontak-value">alif-kurnia-3649741b4</div>
+        </div>
+      </a>
+      <a href="https://github.com/alifk3525-ux" class="kontak-item" target="_blank">
+        <div class="kontak-icon" style="background: rgba(255,255,255,0.1); color: var(--white);">💻</div>
+        <div class="kontak-meta">
+          <div class="kontak-type">GitHub</div>
+          <div class="kontak-value">alifk3525-ux</div>
         </div>
       </a>
     </div>
